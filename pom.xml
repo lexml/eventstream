@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.gov.lexml</groupId>
+	<artifactId>eventstream</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<properties>
+		<scala.version>2.11</scala.version>
+		<scala.lib.version>${scala.version}.4</scala.lib.version>
+
+	</properties>
+
+	<build>
+		
+		<plugins>
+
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<version>3.1.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sourceDir>src/main/scala</sourceDir>
+					<testDir>src/test/scala</testDir>
+					<fork>true</fork>
+					<jvmArgs>
+						<jvmArg>-Xms1024m</jvmArg>
+						<jvmArg>-Xmx4096m</jvmArg>
+						<jvmArg>-Xss16m</jvmArg>
+					</jvmArgs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+
+		<!-- Drools -->
+
+		<!-- Scala -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala.lib.version}</version>
+		</dependency>
+		
+		<!-- Akka -->
+		
+		<!-- Data -->
+
+		<!-- Logs e Geral -->
+		
+		<!-- Dependências SIGEN -->
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+	</dependencies>
+
+</project>
